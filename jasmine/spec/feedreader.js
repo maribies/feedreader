@@ -46,7 +46,7 @@ $(function() {
          it('has defined name', function(){
            for (let feed of allFeeds) {
              expect(feed.name).toBeDefined();
-             expect(feed.name.lenght).not.toBe(0);
+             expect(feed.name.length).not.toBe(0);
            }
          });
     });
@@ -90,20 +90,29 @@ $(function() {
         });
 
         it('loadFeed is called and complete with single entry in feed container', function(){
-        expect($('feed').children.length > 0).toBe(true);
+          expect($('feed').children.length > 0).toBe(true);
         });
 
       });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
-  
+
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-      // describe('New Feed Selection', function() {
-      //
-      // });
+      describe('New Feed Selection', function() {
+        beforeEach(function(done){
+          loadFeed(0);
+          loadFeed(1, done);
+        });
 
-
+        it('new feed content changes', function() {
+          allFeeds.forEach(function(feed) {
+            let feedArray = [];
+            feedArray.push(feed.id);
+            expect(feedArray[0] !== feedArray[1]).toBe(true);
+          })
+        });
+      });
 }());
