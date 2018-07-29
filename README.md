@@ -33,7 +33,7 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
 
-# How will I complete this project?
+# Project Rubric/Steps taken:
 
 Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
